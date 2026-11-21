@@ -1,0 +1,27 @@
+{
+  "name": "Blackburn (host devices)",
+  "build": {
+    "dockerfile": "../code/Dockerfile",
+    "context": "../code",
+    "args": {
+      "INSTALL_DOCKER_CLI": "1"
+    }
+  },
+  "remoteUser": "vscode",
+  "updateRemoteUserUID": true,
+  "runArgs": ["--device=/dev/kvm", "--device=/dev/dri/renderD128"],
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+    "source=blackburn-gomod,target=/go/pkg/mod,type=volume",
+    "source=blackburn-gocache,target=/home/vscode/.cache/go-build,type=volume",
+    "source=blackburn-toolcache,target=/home/vscode/.cache/blackburn,type=volume",
+    "source=blackburn-pubcache,target=/home/vscode/.pub-cache,type=volume"
+  ],
+  "postCreateCommand": "sudo /usr/local/bin/blackburn-dev-init && go mod download && (cd xcross && dart pub get)",
+  "postStartCommand": "sudo /usr/local/bin/blackburn-dev-init",
+  "customizations": {
+    "vscode": {
+      "extensions": ["golang.go", "Dart-Code.dart-code"]
+    }
+  }
+}

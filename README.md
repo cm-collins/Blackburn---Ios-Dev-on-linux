@@ -141,6 +141,10 @@ blackburn sim stream
 > [!TIP]
 > **Keyboard / Mouse Capture**: Click into the native window to capture input. Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Super</kbd> to release focus back to Linux. Closing the window safely detaches presentation without powering off the VM.
 
+### 4.4 Dev Container
+
+Reopen this folder in a container and choose **Blackburn** to build the CLI and bundled `xcross` with Go 1.23 and Dart 3.14. Choose **Blackburn (host devices)** on a laptop that already has the macOS appliance. The simulator still runs on the host. Details and the acceptance command are in [`docs/DEVCONTAINER.md`](docs/DEVCONTAINER.md).
+
 ---
 
 ## 5. VS Code / IDE Integration (1-Click F5 & Hot Reload)
@@ -331,6 +335,7 @@ Output a concise summary of the discovered hardware, active mode, leased simulat
 - **Laptop Optimization & Packaging**: [`docs/BLACKBURN_LAPTOP_OPTIMIZATION_AND_PACKAGING.md`](file:///home/srayansh/Documents/Golang/Blackburn/docs/BLACKBURN_LAPTOP_OPTIMIZATION_AND_PACKAGING.md) — Hybrid CPU topology, P-core benchmarks, sparse streaming format.
 - **AMD CPU & Radeon GPU Support**: [`reports/AMD CPU and Radeon GPU support.md`](file:///home/srayansh/Documents/Golang/Blackburn/reports/AMD%20CPU%20and%20Radeon%20GPU%20support.md) — `kvm_amd` / SVM virtualization, Zen 4/5 AVX-512 `XSAVE` precautions, `/dev/udmabuf` zero-copy RADV DMA-BUF import, and AMD host setup.
 - **CLI Reference Guide**: [`docs/BLACKBURN_CLI.md`](file:///home/srayansh/Documents/Golang/Blackburn/docs/BLACKBURN_CLI.md) — Syntax, exit codes, and JSON schemas.
+- **Dev Container**: [`docs/DEVCONTAINER.md`](docs/DEVCONTAINER.md) — Go and Dart toolchain image, and the optional host-device config.
 - **Research Reports**: [`reports/`](file:///home/srayansh/Documents/Golang/Blackburn/reports/) — Headless graphics decoupling, compilation pipelines, Apple signing/keychain CLI without GUI.
 
 ---
